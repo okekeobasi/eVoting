@@ -1,0 +1,82 @@
+
+body{
+	font-family: 'Century Gothic';
+}
+
+nav ul{
+	box-shadow: 0 1px 1px 1px #ccc;
+	border-radius: 0px;
+}
+
+nav ul li a{
+	color: #282828;
+}
+nav ul li a:hover{
+	color: #282828;
+	background-color: #ccc;
+}
+
+.header-text a{
+	text-decoration: none;
+	color: #282828;
+}
+
+.form-btn{
+	background-color: #282828;
+	color: #fff;
+}
+
+.form-txt:focus{
+	border-color: #282828;
+}
+
+.header-text{
+	text-align: center;
+}
+
+.home-section{
+	margin-top: 5%;
+}
+
+div.card{
+	width: 250px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	text-align: center;
+	float: left;
+	margin: 2%;
+}
+
+div.image{
+	/*background-color: #4CAF50;*/
+	color: white;
+	padding: 10px;
+	font-size: 40px;
+}
+
+div.title{
+	padding: 10px;
+}
+
+.image img{
+	max-width: 200px;
+}
+
+.poll-list{
+	list-style: none;
+	text-align: center;
+}
+
+.poll-list li{
+	padding-top: 4%;
+	padding-bottom: 4%;
+	border: 1px solid #ccc;
+}
+
+.list-date{
+	font-size: 10px;
+	float: right;
+}
+
+.poll-text{
+	width: 100%;
+}
