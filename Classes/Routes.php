@@ -38,7 +38,7 @@ ENDOFSTRING;
 		$redirect = <<<ENDOFSTRING
 			<script type="text/javascript">
 				alert("{$error}");
-				window.location="{$link}";
+				window.location="/eVoting/{$link}";
 			</script>
 ENDOFSTRING;
 

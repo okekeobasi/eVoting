@@ -28,8 +28,8 @@
 			<div class="col-md-offset-4 col-md-4 col-sm-offset-2 col-sm-8 ">
 				<div class="row">
 					<ul class="poll-list">
-						<li><a href="landing.php?poll=warden">Warden</a> <span class="list-date">2018/03/01<span></li>
-						<li><a href="landing.php?poll=verger">Verger</a> <span class="list-date">2018/03/01<span></li>
+						<li><a href="votingPage.php?poll=warden">Warden</a> <span class="list-date">2018/03/01<span></li>
+						<li><a href="votingPage.php?poll=verger">Verger</a> <span class="list-date">2018/03/01<span></li>
 					</ul>
 				</div>
 			</div>

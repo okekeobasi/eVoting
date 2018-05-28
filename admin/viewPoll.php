@@ -28,6 +28,11 @@
 		<div class="container">
 			<div class="col-md-offset-4 col-md-4 col-sm-offset-2 col-sm-8 ">
 				<div class="row">
+					<a href="viewfancyPoll.php?name=<?php echo $_GET['name'] ?>">
+						<span class="glyphicon glyphicon-th-large"></span> Change View
+					</a>
+				</div>
+				<div class="row">
 					<table id="table" class="table-responsive table-hover table">
 						<thead>
 							<th>Candidate</th>

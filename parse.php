@@ -4,6 +4,9 @@ require("sessionChecker.php");
 	// var_dump($_POST);
 	$username = $_POST["tag"];
 	$password = $_POST["password"];
+
+	$username = Validator::quoteChecker($username);
+	$password = Validator::quoteChecker($password);
 	
 	$mysqli = new mysqli("localhost","mica","","polls_db");
 	if($mysqli->connect_errno){
@@ -28,7 +31,7 @@ require("sessionChecker.php");
 		}
 		else{
 			$row = $result->fetch_assoc();
-			if(password_verify($password, $row['password'])) {
+			if(password_verify($password, $row['password'])){
 				$_SESSION['user_id'] = $row['id'];
 				$_SESSION['role'] = "admin";
 
@@ -42,7 +45,7 @@ require("sessionChecker.php");
 	}
 	else{
 		$row = $result->fetch_assoc();
-		if($password == $row['password']) {
+		if($password == $row['password']){
 			$_SESSION['user_id'] = $row['id'];
 			$_SESSION['role'] = "user";
 

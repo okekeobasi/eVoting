@@ -33,14 +33,9 @@
 		<div class="container">
 			<div class="col-md-offset-4 col-md-4 col-sm-offset-2 col-sm-8 ">
 				<div class="row text-center">
-					<form id="myForm" onsubmit="insert()" method="POST" action="createPoll.php" enctype="multipart/form-data">
-						<input type="text" name="name" placeholder="Poll Name..." class="form-control"><br>
-						<h4><label>How many candidates:</label></h4>
-						<input type="number" name="candidates" id="candidates" placeholder="Type here..." class="poll-text">
-						<button class="btn btn-sm btn-default" onclick="create()" type="button">create</button><br><br>
-						<div id="text-div"></div>
-						<hr>
-						<button class="btn btn-default" id="form-btn" onclick="validateMyForm();">Submit</button>
+					<form id="myForm" onsubmit="insert()" method="POST" action="upload.php" enctype="multipart/form-data">
+						<input type="file" name="pic" id="pic" size="25" />
+						<input type="submit" name="submit">
 					</form>
 				</div>
 			</div>
