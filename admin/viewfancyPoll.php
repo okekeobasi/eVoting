@@ -19,6 +19,10 @@
 	<hr>
 	<!-- Instructions Section -->
 	<section class="container-fluid" style="text-align: center;">
+		<div>
+			<a class="pull-left" href="./index.php"><span class="glyphicon glyphicon-backward"></span> return</a>
+			<a class="pull-right" href="../logout.php"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a>
+		</div>
 		<article>
 			<h3>Poll name</h3>
 		</article>

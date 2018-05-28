@@ -18,6 +18,7 @@
 	<!-- Instructions Section -->
 	<section class="container-fluid" style="text-align: center;">
 		<article>
+			<a href="../logout.php"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a>
 			<h3>Instructions</h3>
 			<p>
 				Choose a Poll

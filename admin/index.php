@@ -16,6 +16,7 @@
 	<hr>
 	<!-- Instructions Section -->
 	<section class="container-fluid" style="text-align: center;">
+		<a href="../logout.php"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a>
 		<article>
 			<h3>Instructions</h3>
 			<p>
