@@ -2,6 +2,7 @@
 	require("sessionChecker.php");
 
 	$name = $_POST["name"];
+	$max = $_POST["max"];
 	$name = Validator::quoteChecker($name);
 
 	$mysqli = new mysqli("localhost","mica","","polls_db");
@@ -16,7 +17,7 @@
 	}
 
 	if($result->num_rows===0){
-		$insert = "INSERT INTO polls(id, name) VALUES(NULL, '$name')";
+		$insert = "INSERT INTO polls(id, name, max) VALUES(NULL, '$name', '$max')";
 		$sql_insert = $mysqli->query($insert);
 		if(!$sql_insert){
 			echo "QUERY ERROR: $mysqli->error";

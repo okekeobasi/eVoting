@@ -31,9 +31,11 @@
 				<div class="col-md-offset-4 col-md-4">
 					<div class="login-box">
 						<form method="post" action="parse.php">
+							<!-- Use this to login as a username -->
 							<label for="Tag">Tag Number:</label><br>
 							<input type="text" name="tag" class="form-control form-txt" placeholder="Tag Number..." required>
 							<br>
+							<!-- use this as password duh! -->
 							<label for="password">Password:</label><br>
 							<input type="password" name="password" class="form-control form-txt" placeholder="Password..." required>
 							<br>

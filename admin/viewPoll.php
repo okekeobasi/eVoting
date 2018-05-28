@@ -45,7 +45,7 @@
 								$voters = $row["user_id"];
 								if (strpos($voters, ':') !== false) {
 								    $votes = explode(":", $voters);
-									$votes = sizeof($votes);
+									$votes = sizeof($votes) - 1;
 								}
 								else{
 									$votes = 0;

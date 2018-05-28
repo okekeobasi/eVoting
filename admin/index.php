@@ -37,7 +37,7 @@
 						<?php
 							while($row = $result->fetch_assoc()){
 								$poll_name = $row["name"];
-								echo "<li><a href='viewPoll.php?name=${poll_name}'>${poll_name}</a> <span class='list-date'>2018/03/01<span></li>";
+								echo "<li><a href='viewPoll.php?name=${poll_name}'>${poll_name}</a> <span class='list-date'><span></li>";
 							}
 						?>
 					</ul>

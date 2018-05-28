@@ -35,8 +35,11 @@
 				<div class="row text-center">
 					<form id="myForm" onsubmit="insert()" method="POST" action="createPoll.php" enctype="multipart/form-data">
 						<input type="text" name="name" placeholder="Poll Name..." class="form-control"><br>
+						<h4><label>Maximum number of Votes:</label></h4>
+						<input type="number" name="max" id="max" placeholder="Type here..." class="poll-text" required="true">
+
 						<h4><label>How many candidates:</label></h4>
-						<input type="number" name="candidates" id="candidates" placeholder="Type here..." class="poll-text">
+						<input type="number" name="candidates" id="candidates" placeholder="Type here..." class="poll-text" required="true">
 						<button class="btn btn-sm btn-default" onclick="create()" type="button">create</button><br><br>
 						<div id="text-div"></div>
 						<hr>

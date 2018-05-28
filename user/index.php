@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<?php require("poll_fetch.php"); ?>
   	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<meta charset="utf-8">
 	<title>eVoting</title>
 	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/custom.css">
+	<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
 </head>
 <body>
 	<!-- Header -->
@@ -28,8 +30,15 @@
 			<div class="col-md-offset-4 col-md-4 col-sm-offset-2 col-sm-8 ">
 				<div class="row">
 					<ul class="poll-list">
-						<li><a href="votingPage.php?poll=warden">Warden</a> <span class="list-date">2018/03/01<span></li>
-						<li><a href="votingPage.php?poll=verger">Verger</a> <span class="list-date">2018/03/01<span></li>
+						<?php
+							$get_poll_id_row = $select_user_result->fetch_assoc();
+							while($row = $result->fetch_assoc()){
+								$poll_id = $row["id"];
+								$poll_name = $row["name"];
+								if(strpos($get_poll_id_row['poll_id'], $poll_id) !== false ) continue;
+								echo "<li><a href='votingPage.php?name=${poll_name}'>${poll_name}</a> <span class='list-date'><span></li>";
+							}
+						?>
 					</ul>
 				</div>
 			</div>

@@ -2,9 +2,12 @@
 require("sessionChecker.php");
 
 	// var_dump($_POST);
+	// username
 	$username = $_POST["tag"];
+	// password
 	$password = $_POST["password"];
 
+	// use this to check for quotes
 	$username = Validator::quoteChecker($username);
 	$password = Validator::quoteChecker($password);
 	
@@ -48,6 +51,7 @@ require("sessionChecker.php");
 		if($password == $row['password']){
 			$_SESSION['user_id'] = $row['id'];
 			$_SESSION['role'] = "user";
+			$_SESSION['poll_id'] = $row["poll_id"];
 
 			Routes::redirect_to("user");
 		}
