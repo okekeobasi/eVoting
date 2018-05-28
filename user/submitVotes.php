@@ -8,10 +8,10 @@
 
 	print_r($poll_id);
 
-	$mysqli = new mysqli("localhost","mica","","polls_db");
+	/*$mysqli = new mysqli("localhost","mica","","polls_db");
 	if($mysqli->connect_errno){
 		echo "$mysqli->connect_errno: $mysqli->connect_error";
-	}
+	}*/
 
 	// select from users
 	$select_users_query = "SELECT poll_id FROM users WHERE id='${id}' ";

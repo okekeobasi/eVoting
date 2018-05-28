@@ -7,10 +7,10 @@
 
 	// echo $tag . " " . $password;
 
-	$mysqli = new mysqli("localhost","mica","","polls_db");
+	/*$mysqli = new mysqli("localhost","mica","","polls_db");
 	if($mysqli->connect_errno){
 		echo "$mysqli->connect_errno: $mysqli->connect_error";
-	}
+	}*/
 
 	$query = "SELECT * FROM users WHERE number = '$tag'";
 	$result = $mysqli->query($query);

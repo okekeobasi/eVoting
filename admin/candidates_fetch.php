@@ -2,10 +2,11 @@
 	require("sessionChecker.php"); 
 
 	$name = $_GET["name"];
+	/*
 	$mysqli = new mysqli("localhost","mica","","polls_db");
 	if($mysqli->connect_errno){
 		echo "$mysqli->connect_errno: $mysqli->connect_error";
-	}
+	}*/
 
 	$query = "SELECT * FROM polls WHERE name = '$name'";
 	$result = $mysqli->query($query);

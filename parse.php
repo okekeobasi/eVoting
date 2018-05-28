@@ -11,10 +11,12 @@ require("sessionChecker.php");
 	$username = Validator::quoteChecker($username);
 	$password = Validator::quoteChecker($password);
 	
+	/*
 	$mysqli = new mysqli("localhost","mica","","polls_db");
 	if($mysqli->connect_errno){
 		echo "$mysqli->connect_errno: $mysqli->connect_error";
 	}
+	*/
 
 	$query = "SELECT * FROM users WHERE number = '$username'";
 	$result = $mysqli->query($query);
