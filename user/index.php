@@ -32,11 +32,14 @@
 				<div class="row">
 					<ul class="poll-list">
 						<?php
+							// get the poll_id for the poll_fetch.php
 							$get_poll_id_row = $select_user_result->fetch_assoc();
 							while($row = $result->fetch_assoc()){
 								$poll_id = $row["id"];
 								$poll_name = $row["name"];
+								// if a poll ID is in the user poll_id column dont show the poll
 								if(strpos($get_poll_id_row['poll_id'], $poll_id) !== false ) continue;
+								// Go to the votingPage.php with parameters: name;
 								echo "<li><a href='votingPage.php?name=${poll_name}'>${poll_name}</a> <span class='list-date'><span></li>";
 							}
 						?>

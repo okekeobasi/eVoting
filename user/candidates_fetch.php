@@ -1,6 +1,7 @@
 <?php 
 	require("sessionChecker.php"); 
 
+	//Get the name of the poll parameter passed from the index.php 
 	$name = $_GET["name"];
 	/*
 	$mysqli = new mysqli("localhost","mica","","polls_db");
@@ -8,6 +9,7 @@
 		echo "$mysqli->connect_errno: $mysqli->connect_error";
 	}*/
 
+	// Get the maximum number of votes and ID from polls table
 	$query = "SELECT * FROM polls WHERE name = '$name'";
 	$result = $mysqli->query($query);
 	if(!$result){
@@ -18,6 +20,7 @@
 	$poll_id = $row["id"];
 	$max = $row["max"];
 
+	// Get all the candidates for a poll from the candidates table
 	$query = "SELECT * FROM candidates WHERE poll_id = $poll_id";
 	$result = $mysqli->query($query);
 	if(!$result){

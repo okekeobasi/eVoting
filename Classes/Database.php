@@ -1,4 +1,7 @@
 <?php
+/*
+*This class connects to the database
+*/
 	Class Database{
 		public $user = "mica";
 		public $database = "polls_db";
@@ -10,6 +13,7 @@
 				echo "$mysqli->connect_errno: $mysqli->connect_error";
 			}
 
+			// Return this to the files that need it
 			return $mysqli;
 		}
 	}
