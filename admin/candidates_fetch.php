@@ -22,4 +22,10 @@
 	if(!$result){
 		echo "QUERY ERROR: $mysqli->error";
 	}
+
+	$sum_query = "SELECT * FROM candidates WHERE poll_id = $poll_id";
+	$sum_result = $mysqli->query($sum_query);
+	if(!$sum_result){
+		echo "QUERY ERROR: $mysqli->error";
+	}
 ?>

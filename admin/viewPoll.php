@@ -44,6 +44,27 @@
 							<th>%</th>
 						</thead>
 						<?php
+						// Generate the total sum of votes
+						$sum = 0;
+						$sum_votes = 0;
+							// the $sum_result is initiated in candidates_fetch
+							while($sum_row = $sum_result->fetch_assoc()){
+								//the user_id is saved in a record seperated by a colon rg '1:2'
+								$sum_voters = $sum_row["user_id"];
+								// split and count the user_id
+								if (strpos($sum_voters, ':') !== false) {
+								    $sum_votes = explode(":", $sum_voters);
+									$sum_votes = sizeof($sum_votes) - 1;
+								}
+								else{
+									$sum_votes = 0;
+								}
+								// get the sum for the percentage column
+								$sum = $sum + $sum_votes;
+							}
+						?>
+
+						<?php
 							while($row = $result->fetch_assoc()){
 								$candidate = $row["name"];
 								$voters = $row["user_id"];
@@ -54,11 +75,13 @@
 								else{
 									$votes = 0;
 								}
+								$perc = ($votes/$sum) * 100;
+								// get this for the table 
 								$table_row = <<<ENDOFSTRING
 										<tr>
 											<td>${candidate}</td>
 											<td>${votes}</td>
-											<td>%</td>
+											<td>${perc}</td>
 										</tr>
 ENDOFSTRING;
 									echo $table_row;

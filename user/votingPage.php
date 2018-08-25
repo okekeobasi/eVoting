@@ -37,6 +37,7 @@
 			<div method="get" class="col-lg-offset-2 col-lg-10 col-md-offset-2 col-md-10 col-sm-offset-2 col-sm-12 col-xs-12">
 				<div class="row">
 					<?php
+						//Check the comments in the admin\viewPoll.php
 						while($row = $result->fetch_assoc()){
 							$candidate = $row["name"];
 							$pic_name = $row["picture"];
