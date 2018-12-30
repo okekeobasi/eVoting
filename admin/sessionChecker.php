@@ -1,8 +1,8 @@
 <?php
 session_start();
-	include("..\Classes\Routes.php");
-	include("..\Classes\Validator.php");
-	include("..\Classes\Database.php");
+	require __DIR__ . "\Classes\Routes.php";
+	require __DIR__ . "\Classes\Validator.php";
+	require __DIR__ . "\Classes\Database.php";
 
 	if(!isset($_SESSION["user_id"])) Routes::err_custom("Please Login","../");
 	if($_SESSION["role"] != "admin") Routes::redirect_to("user");

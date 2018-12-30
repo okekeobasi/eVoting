@@ -21,6 +21,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `polls_db`
 --
+CREATE DATABASE `polls_db`;
 
 -- --------------------------------------------------------
 
