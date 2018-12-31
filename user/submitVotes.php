@@ -6,7 +6,8 @@
 	$poll_name = $_GET["poll_name"];
 	$poll_id = $_GET["poll_id"];
 
-	print_r($poll_id);
+	// var_dump($data);
+	// print_r($poll_id);
 
 	/*$mysqli = new mysqli("localhost","mica","","polls_db");
 	if($mysqli->connect_errno){
@@ -20,7 +21,16 @@
 		echo "QUERY ERROR: $mysqli->error";
 	}
 	$select_users_result_row = $select_users_result->fetch_assoc();
+	/*
+	if (strpos($select_users_result_row['poll_id'], ':') !== false) {
+	    $poll_id = $select_users_result_row['poll_id'] . $poll_id;
+	}
+	else{
+		$poll_id = $select_users_result_row['poll_id'] .":".$poll_id;
+	}
+	*/
 	$poll_id = $select_users_result_row['poll_id'] . $poll_id;
+	// echo $poll_id."\n";
 
 	// update users
 	$update_users_query = "UPDATE users SET poll_id='${poll_id}:' WHERE id='${id}' ";
@@ -38,7 +48,16 @@
 			echo "QUERY ERROR: $mysqli->error";
 		}
 		$select_candidates_result_row = $select_candidates_result->fetch_assoc();
+		/*
+		if (strpos($select_candidates_result_row['user_id'], ':') !== false) {
+		    $id = $select_candidates_result_row['user_id'] . $id;
+		}
+		else{
+			$id = $select_candidates_result_row['user_id'] .":".$id;
+		}
+		*/
 		$id = $select_candidates_result_row['user_id'] . $id;
+		// echo $id."\n";
 		// update candidates
 		$update_candidates_query = "UPDATE candidates SET user_id='${id}:' WHERE name='$data[$i]' ";
 		$update_candidates_result = $mysqli->query($update_candidates_query);
@@ -47,4 +66,6 @@
 		}
 	}
 
+	$response_array['status'] = 'success'; 
+	// echo json_encode($response_array);
 ?>

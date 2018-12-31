@@ -18,7 +18,7 @@
     $imagetemp = $_FILES['pic']['tmp_name'];
 
     //The path you wish to upload the image to
-    $imagePath = "candidatePics/";
+    $imagePath = __DIR__."/candidatePics/";
 
     if(is_uploaded_file($imagetemp)) {
         if(move_uploaded_file($imagetemp, $imagePath . $imagename)) {

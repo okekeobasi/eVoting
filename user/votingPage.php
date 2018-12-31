@@ -96,6 +96,7 @@ ENDOFSTRING;
 				candidates.push($('.active')[i].value)
 			}
 			candidates_obj = JSON.parse(JSON.stringify(candidates))
+			console.log(candidates_obj);
 			
 			url = "submitVotes.php"; 
 			id = <?php echo $_SESSION['user_id']; ?>;
@@ -109,11 +110,11 @@ ENDOFSTRING;
 	  			    poll_name: "<?php echo $name; ?>",
 	  			    poll_id : "<?php echo $poll_id; ?>"
 	  			},
-	  			success: function(){
+	  			success: function(data){
 	  				alert('Thank You for voting')
 	  				window.location = '/eVoting/user';
 	  			},
-	  			dataType: 'json'
+	  			// dataType: 'json'
 	  		});
 		}
 

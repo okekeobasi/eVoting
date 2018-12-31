@@ -66,8 +66,9 @@ ENDOFSTRING;
 				</div>
 				<br>
 				<div class="row">
-					<form>
-						<button class="btn btn-danger" type="submit" name="delete" value="poll-name"  onclick="ask()">
+					<form action="deletePoll.php">
+						<button class="btn btn-danger" type="submit" name="delete" 
+						value="<?php echo $_GET['name'] ?>"  onclick="ask()">
 							<span class="glyphicon glyphicon-trash"></span> Delete Poll
 						</button>
 					</form>

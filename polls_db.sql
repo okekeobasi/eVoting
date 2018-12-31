@@ -21,7 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `polls_db`
 --
-CREATE DATABASE `polls_db`;
 
 -- --------------------------------------------------------
 
@@ -51,7 +50,7 @@ INSERT INTO `admins` (`id`, `name`, `password`) VALUES
 CREATE TABLE `candidates` (
   `id` int(11) NOT NULL,
   `poll_id` int(11) NOT NULL,
-  `user_id` int(11) DEFAULT NULL,
+  `user_id` varchar(100) DEFAULT NULL,
   `name` varchar(100) NOT NULL,
   `picture` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -95,17 +94,17 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 
 CREATE TABLE `polls` (
   `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL
+  `name` varchar(50) NOT NULL,
+  `max` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `polls`
 --
 
-INSERT INTO `polls` (`id`, `name`) VALUES
-(1, 'Food'),
-(2, 'Cars');
-
+INSERT INTO `polls` (`id`, `name`, `max`) VALUES
+(1, 'Food', 1),
+(2, 'Cars', 3);
 -- --------------------------------------------------------
 
 --
@@ -129,7 +128,7 @@ CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
   `number` int(11) NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `poll_id` int(11) DEFAULT NULL
+  `poll_id` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --

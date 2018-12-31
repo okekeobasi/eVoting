@@ -1,5 +1,7 @@
 <?php
 	require("sessionChecker.php");
+	// ini_set("upload_tmp_dir", __DIR__.'/candidatePics');
+
 
 	$name = $_POST["name"];
 	$max = $_POST["max"];
@@ -56,8 +58,9 @@
 			}
 
 			//image upload
-			$target_dir =  './candidatePics/';
+			$target_dir =  __DIR__.'/candidatePics';
 			$target_file = $target_dir . "/$candidateImg";
+			// var_dump($_FILES);
 			if(is_uploaded_file($_FILES["$imgIndex"]["tmp_name"])) {
 			    if(move_uploaded_file($_FILES["$imgIndex"]["tmp_name"], $target_file)) {
 			        echo "Sussecfully uploaded your image. <br>";
