@@ -1,2 +1,3 @@
-/asseets
-/admin/candidatePics
+assets/
+admin/candidatePics/*
+.env
