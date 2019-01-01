@@ -40,6 +40,7 @@
 						//Check the comments in the admin\viewPoll.php
 						while($row = $result->fetch_assoc()){
 							$candidate = $row["name"];
+							$candidate_decoded = urldecode($row["name"]);
 							$pic_name = $row["picture"];
 							$voters = $row["user_id"];
 							if (strpos($voters, ':') !== false) {
@@ -56,7 +57,7 @@
 										</div>
 										<hr>
 										<div class="title">
-											<p>${candidate}</p>
+											<p>${candidate_decoded}</p>
 											<input type="checkbox" onclick="track(this)" value="$candidate" class="inactive"/>
 										</div>
 									</div>

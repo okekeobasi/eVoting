@@ -67,6 +67,7 @@
 						<?php
 							while($row = $result->fetch_assoc()){
 								$candidate = $row["name"];
+								$candidate_decoded = urldecode($row["name"]);
 								$voters = $row["user_id"];
 								if (strpos($voters, ':') !== false) {
 								    $votes = explode(":", $voters);
@@ -79,7 +80,7 @@
 								// get this for the table 
 								$table_row = <<<ENDOFSTRING
 										<tr>
-											<td>${candidate}</td>
+											<td>${candidate_decoded}</td>
 											<td>${votes}</td>
 											<td>${perc}</td>
 										</tr>
