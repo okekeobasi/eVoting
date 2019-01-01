@@ -37,8 +37,9 @@
 					<ul class="poll-list">
 						<?php
 							while($row = $result->fetch_assoc()){
-								$poll_name = $row["name"];
-								echo "<li><a href='viewPoll.php?name=${poll_name}'>${poll_name}</a> <span class='list-date'><span></li>";
+								$poll_name = urldecode($row["name"]);
+								$poll_name_encoded = $row["name"];
+								echo "<li><a href='viewPoll.php?name=${poll_name_encoded}'>${poll_name}</a> <span class='list-date'><span></li>";
 							}
 						?>
 					</ul>

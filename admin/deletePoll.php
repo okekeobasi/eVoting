@@ -1,7 +1,7 @@
 <?php
 	require("sessionChecker.php");
 
-	$name = $_GET["delete"];
+	$name = Validator::quoteChecker($_GET["delete"]);
 	
 	$fetch_id_query = "SELECT id from polls WHERE name='$name'";
 	$fetch_id_result = $mysqli->query($fetch_id_query);

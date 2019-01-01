@@ -63,15 +63,15 @@
 			// var_dump($_FILES);
 			if(is_uploaded_file($_FILES["$imgIndex"]["tmp_name"])) {
 			    if(move_uploaded_file($_FILES["$imgIndex"]["tmp_name"], $target_file)) {
-			        echo "Sussecfully uploaded your image. <br>";
+			        // echo "Sussecfully uploaded your image. <br>";
 			    }
 			    else {
-			        echo "Failed to move your image.<br>";
+			        // echo "Failed to move your image.<br>";
 			        $fail_count++;
 			    }
 			}
 			else {
-			    echo "Failed to upload your image.<br>";
+			    // echo "Failed to upload your image.<br>";
 			    $fail_count++;
 			}
 		}

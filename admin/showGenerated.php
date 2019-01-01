@@ -28,7 +28,7 @@
 				Use the tag number and password provided in the textboxes below<br>
 				to take part in the polls
 			</p>
-			<a href="generate.php"><button class="btn btn-default">Generate</button></a>
+			<a href="showGenerated.php"><button class="btn btn-default">Generate</button></a>
 		</article>
 	</section>
 	<!-- Login Section -->

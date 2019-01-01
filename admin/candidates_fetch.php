@@ -1,7 +1,7 @@
 <?php 
 	require("sessionChecker.php"); 
 
-	$name = $_GET["name"];
+	$name = urlencode($_GET["name"]);
 	/*
 	$mysqli = new mysqli("localhost","mica","","polls_db");
 	if($mysqli->connect_errno){

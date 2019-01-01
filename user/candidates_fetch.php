@@ -2,7 +2,7 @@
 	require("sessionChecker.php"); 
 
 	//Get the name of the poll parameter passed from the index.php 
-	$name = $_GET["name"];
+	$name = urlencode($_GET["name"]);
 	/*
 	$mysqli = new mysqli("localhost","mica","","polls_db");
 	if($mysqli->connect_errno){

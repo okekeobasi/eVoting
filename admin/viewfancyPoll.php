@@ -24,7 +24,7 @@
 			<a class="pull-right" href="../logout.php"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a>
 		</div>
 		<article>
-			<h3>Poll name</h3>
+			<h3><?php echo urldecode($name); ?></h3>
 		</article>
 	</section>
 	<!-- Candidate Section -->
