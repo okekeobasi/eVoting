@@ -5,6 +5,7 @@
 	$data = $_GET["data"];
 	$poll_name = $_GET["poll_name"];
 	$poll_id = $_GET["poll_id"];
+	$this_poll_id = $_GET["poll_id"];
 
 	// var_dump($data);
 	// print_r($poll_id);
@@ -43,8 +44,8 @@
 	for($i = 0; $i < sizeof($data); $i++){
 		// select from candidates
 		echo "\n" . $data[$i];
-
-		$select_candidates_query = "SELECT user_id FROM candidates WHERE name='$data[$i]' ";
+		echo $this_poll_id;
+		$select_candidates_query = "SELECT user_id FROM candidates WHERE name='$poll_name' AND poll_id=$this_poll_id";
 		$select_candidates_result = $mysqli->query($select_candidates_query);
 		if(!$select_candidates_result){
 			echo "QUERY ERROR: $mysqli->error";
@@ -65,7 +66,7 @@
 			$id = $select_candidates_result_row['user_id'] . $id;
 			// echo $id."\n";
 			// update candidates
-			$update_candidates_query = "UPDATE candidates SET user_id='${id}:' WHERE name='$data[$i]' ";
+			$update_candidates_query = "UPDATE candidates SET user_id='${id}:' WHERE name='$data[$i]' AND poll_id=$this_poll_id";
 			$update_candidates_result = $mysqli->query($update_candidates_query);
 			if(!$update_candidates_result){
 				echo "QUERY ERROR: $mysqli->error";
