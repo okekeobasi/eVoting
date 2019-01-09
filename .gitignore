@@ -3,3 +3,4 @@
 *.png
 *.gif
 .env
+admin-login.php

@@ -18,16 +18,18 @@
 	<!-- Instructions Section -->
 	<section class="container-fluid" style="text-align: center;">
 		<article>
-			<a href="../logout.php"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a>
+			<a class="logout-link" href="../logout.php"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a>
 			<h3>Instructions</h3>
 			<p>
-				Choose a Poll
+				Choose a Poll and vote for your desired candidates
+				<br/>
+				<span class="text-danger">Do not vote more than once for each poll</span>
 			</p>
 		</article>
 	</section>
 	<!-- Main Section -->
 	<section class="container-fluid home-section">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="col-md-offset-4 col-md-4 col-sm-offset-2 col-sm-8 ">
 				<div class="row">
 					<ul class="poll-list">
@@ -40,7 +42,7 @@
 								$poll_name_encoded = $row["name"];
 
 								// if a poll ID is in the user poll_id column dont show the poll
-								if(strpos($get_poll_id_row['poll_id'], $poll_id) !== false ) continue;
+								// if(strpos($get_poll_id_row['poll_id'], $poll_id) !== false ) continue;
 								// Go to the votingPage.php with parameters: name;
 								echo "<li><a href='votingPage.php?name=${poll_name_encoded}'>${poll_name}</a> <span class='list-date'><span></li>";
 							}

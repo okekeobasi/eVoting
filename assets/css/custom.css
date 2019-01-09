@@ -35,7 +35,7 @@ nav ul li a:hover{
 }
 
 .home-section{
-	margin-top: 5%;
+	margin-top: 2%;
 }
 
 div.card{
@@ -81,4 +81,8 @@ div.title{
 
 .poll-text{
 	width: 100%;
+}
+
+.logout-link{
+	font-size: 8px;
 }

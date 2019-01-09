@@ -20,7 +20,7 @@
 		<article>
 			<div>
 				<a class="pull-left" href="./index.php"><span class="glyphicon glyphicon-backward"></span> return</a>
-				<a class="pull-right" href="../logout.php"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a>
+				<a class="pull-right logout-link" href="../logout.php"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a>
 			</div>
 			<h3><?php echo urldecode($name); ?></h3>
 			<p>
